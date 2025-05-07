@@ -1,14 +1,22 @@
 # PHASE 1: Project Design & Model Development
 
 ## 1. Project Proposal
-- [ ] **1.1 Project Scope and Objectives**
+- [x] **1.1 Project Scope and Objectives**
+
   - [x] Problem statement
-  - The problem of image caption generation is currently of great interest in artificial intelligence (AI) research. Recent advancements in image classification and object detection, as well as natural language processing (NLP) with large language models (LLMs), has opened up opportunities for further research into automatic image caption generation. The ability to do this task can lead to significant progress in other problems such as image searchability, visual question answering (VQA), image understanding, and multi-modal model capabilities. 
+
+The problem of image caption generation is currently of great interest in artificial intelligence (AI) research. Recent advancements in image classification and object detection, as well as natural language processing (NLP) with large language models (LLMs), has opened up opportunities for further research into automatic image caption generation. The ability to do this task can lead to significant progress in other problems such as image searchability, visual question answering (VQA), image understanding, and multi-modal model capabilities. 
+
   - [x] Project objectives and expected impact
-  - This project aims to provide a complete machine learning (ML) solution to address the problem of image caption generation. This repository can be used to deploy a custom solution consisting of a convolutional neural network (CNN) and long short-term memory (LSTM) network in an MLOps pipeline. The success and deployment of these models will make it easier for collaborators to engineer and develop solutions to downstream tasks such as the ones mentioned in the problem statement above. 
+
+This project aims to provide a complete machine learning (ML) solution to address the problem of image caption generation. This repository can be used to deploy a custom solution consisting of a convolutional neural network (CNN) and long short-term memory (LSTM) network in an MLOps pipeline. The success and deployment of these models will make it easier for collaborators to engineer and develop solutions to downstream tasks such as the ones mentioned in the problem statement above. 
+
   - [x] Success metrics
-  - The models will be evaluated on (BiLingual Evaluation Understudy) BLEU score. A BLEU score is a value between 0 and 1 that indicates the quality of the model's text output. This is meant to quantify the correlation from the machine output to a human ground truth, which is stored in an evaluation dataset corresponding to each image in the dataset. The scores are calculated for each sample and averaged over the entire dataset. 
+
+The models will be evaluated on (BiLingual Evaluation Understudy) BLEU score. A BLEU score is a value between 0 and 1 that indicates the quality of the model's text output. This is meant to quantify the correlation from the machine output to a human ground truth, which is stored in an evaluation dataset corresponding to each image in the dataset. The scores are calculated for each sample and averaged over the entire dataset. 
+
   - [x] 300+ word project description
+
 The aim of our project is to implement a machine learning model for automated image caption generation. This model will consist primarily of two parts: a convolutional neural network (CNN) for image feature extraction, and a long short-term memory network for caption generation. The model will be trained on the Flickr8k image dataset with five different captions associated with each image. The models will be trained using Tensorflow, and we are interested in using Tensorboard to integrate monitoring and evaluation into our final project solution.
 
 The model will be implemented in a machine learning operations (MLOps) pipeline. Our complete solution will include all phases of the ML project lifecycle. In the first part of our project, we create a Github repository to contain our codebase, documentation, environment details, and other necessary files and links. We will use the repository to properly version our code and collaborate among team members. Additionally, we properly document our code with best practices during the first stage of the project. We provide further documentation for our project with a detailed README file containing useful information, project details, a working architecture diagram, and other relevant details. This file is also included to provide specific details for Phase 1 of our project.
@@ -23,43 +31,53 @@ In later phases of the project, we will work to make a reproducible solution by 
   - [ ] Model architecture(s) considered
   - [ ] Rationale for model choice
   - [ ] Source/citation for any pre-built models
-- [ ] **1.4 Open-source Tools**
-  - [ ] Third-party package(s) selected (not PyTorch or course-used tools)
-  - [ ] Brief description of how/why used
+- [x] **1.4 Open-source Tools**
+  - [x] Third-party package(s) selected (not PyTorch or course-used tools)
+
+Tensorflow
+
+  - [x] Brief description of how/why used
+
+Tensorflow is a common, trusted package for machine learning. Because of its popularity, we can easily access support online for it. 
 
 ## 2. Code Organization & Setup
 - [ ] **2.1 Repository Setup**
   - [x] GitHub repo created
-  - [ ] Cookiecutter or similar structure used
+  - [x] Cookiecutter or similar structure used
 - [ ] **2.2 Environment Setup**
-  - [ ] Python virtual environment
+  - [x] Python virtual environment
   - [ ] requirements.txt or environment.yml
   - [ ] (Optional) Google Colab setup
 
 ## 3. Version Control & Collaboration
-- [ ] **3.1 Git Usage**
-  - [ ] Regular commits with clear messages
-  - [ ] Branching and pull requests
-- [ ] **3.2 Team Collaboration**
-  - [ ] Roles assigned
-  - [ ] Code reviews and merge conflict resolution
+- [x] **3.1 Git Usage**
+  - [x] Regular commits with clear messages
+  - [x] Branching and pull requests
+- [x] **3.2 Team Collaboration**
+  - [x] Roles assigned
+  - [x] Code reviews and merge conflict resolution
 
 ## 4. Data Handling
-- [ ] **4.1 Data Preparation**
-  - [ ] Cleaning, normalization, augmentation scripts
+- [x] **4.1 Data Preparation**
+  - [x] Cleaning, normalization, augmentation scripts
 - [ ] **4.2 Data Documentation**
   - [ ] Description of data prep process
 
 ## 5. Model Training
 - [ ] **5.1 Training Infrastructure**
   - [ ] Training environment setup (e.g., Colab, GPU)
-- [ ] **5.2 Initial Training & Evaluation**
-  - [ ] Baseline model results
-  - [ ] Evaluation metrics
+- [x] **5.2 Initial Training & Evaluation**
+  - [x] Baseline model results
+
+The final BLEU-1 score of the model was 0.2117. 
+
+  - [x] Evaluation metrics
+
+The model was evaluated on the BLEU score and cross-entropy loss. 
 
 ## 6. Documentation & Reporting
-- [ ] **6.1 Project README**
-  - [ ] Overview, setup, replication steps, dependencies, team contributions
+- [x] **6.1 Project README**
+  - [x] Overview, setup, replication steps, dependencies, team contributions
 - [ ] **6.2 Code Documentation**
   - [ ] Docstrings, inline comments, code style (ruff), type checking (mypy), Makefile docs
 
