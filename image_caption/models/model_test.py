@@ -1,6 +1,8 @@
 
 import numpy as np
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+
 def generate_caption(model, tokenizer, photo, max_length):
     in_text = 'startseq'
     for i in range(max_length):

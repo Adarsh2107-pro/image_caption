@@ -1,5 +1,7 @@
-from image_caption.models.model_test import generate_caption
 from nltk.translate.bleu_score import corpus_bleu
+
+from image_caption.models.model_test import generate_caption
+
 
 def evaluate_model(model, captions_mapping, features, tokenizer, max_length):
     actual, predicted = [], []
@@ -9,9 +11,9 @@ def evaluate_model(model, captions_mapping, features, tokenizer, max_length):
         y_pred = y_pred.split()
         actual.append(references)
         predicted.append(y_pred)
-    
+
     # Calculate BLEU score (BLEU-1)
     bleu1 = corpus_bleu(actual, predicted, weights=(1.0, 0, 0, 0))
-    
+
     # Print BLEU score
     print(f'BLEU-1: {bleu1:.4f}')

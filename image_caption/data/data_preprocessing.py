@@ -1,23 +1,25 @@
+import string
+
 from tensorflow.keras.applications.resnet50 import preprocess_input
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from tensorflow.keras.preprocessing.image import img_to_array, load_img
+
 
 def preprocess_image(image_path):
     # Load the image
     img = load_img(image_path, target_size=(224, 224))  # ResNet50 expects 224x224 images
-    
+
     # Convert the image to a numpy array
     img = img_to_array(img)
-    
+
     # If the image has 4 channels (RGBA), we discard the alpha channel
     if img.shape[-1] == 4:
         img = img[..., :3]
-    
+
     # Preprocess the image as per ResNet50's requirements
     img = preprocess_input(img)
-    
+
     return img
 
-import string
 
 def clean_captions(captions_mapping):
     table = str.maketrans('', '', string.punctuation)
@@ -31,6 +33,3 @@ def clean_captions(captions_mapping):
             # Add start and end tokens
             caption = 'startseq ' + caption + ' endseq'
             captions[i] = caption
-
-
-

@@ -1,5 +1,6 @@
 # Image path for the images
 import pandas as pd
+
 image_path = r"C:\DeepLearning\finalProject\flickr8k\Images"
 
 # Read the CSV file containing captions
