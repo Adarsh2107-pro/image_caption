@@ -1,10 +1,10 @@
-# 🖼️ Image Captioning Project
+# Image Captioning Project 🖼️
 
-## 1. 🧠 Overview
+## 1. Overview 🧠
 
 The project aims to develop a model for captioning images from scratch. Behind the project two main technologies are utilized: Convolutional Neural Network (CNN) and Long Short-Term Memory (LSTM). While CNN focuses on extracting image features, LSTM serves for generating captions. Flickr8k dataset is utilized for training the model. The dataset consists of 8000 images, and each image contains 5 various caption choices. Shortly, the purpose of the project is to create descriptive and meaningful captions for images by effectively integrating text data into image data.
 
-### 1.1 ⚙️ Environment Setup
+### 1.1 Environment Setup ⚙️
 
 To set up the model, you are required to install all the certain libraries and dataset.  
 
@@ -14,11 +14,11 @@ Make sure that all the essential tools and libraries are successfully imported i
 - **Neural Network Operations**: TensorFlow or Keras  
 - **Data Manipulation and Visualization**: NumPy, Matplotlib, and PIL
 
-### 1.2 🗂️ Explore the Flickr8k Dataset
+### 1.2 Explore the Flickr8k Dataset 🗂️
 
 The Flickr8k Dataset contains image-caption pairs. All captions are kept in a text document and linked to images through a dictionary using a mapping structure for future training needs and activities. This dataset was sourced from [Kaggle](https://www.kaggle.com/datasets/adityajn105/flickr8k).
 
-### 1.3 🧹 Data Preprocessing
+### 1.3 Data Preprocessing 🧹
 
 **Image Preprocessing:**
 - Adjusting each image to 224x224 pixels  
@@ -35,9 +35,9 @@ The Flickr8k Dataset contains image-caption pairs. All captions are kept in a te
 
 ---
 
-## 2. 🧪 Methodology
+## 2. Methodology 🧪
 
-### 2.1 🧱 Designing and Implementing the CNN
+### 2.1 Designing and Implementing the CNN 🧱
 
 The CNN model is designed to extract features from images. Its architecture consists of different layers which have own responsibilities and jobs:
 
@@ -48,11 +48,11 @@ The CNN model is designed to extract features from images. Its architecture cons
 - **Dense Layer**: A fully connected layer with a reduced number of units (e.g., 256) using ReLU activation  
 - **Dropout Layer**: During training, it sets certain units to zero to avoid overfitting  
 
-### 2.2 🖼️ Testing the CNN with Sample Images
+### 2.2 Testing the CNN with Sample Images 🖼️
 
 Once the CNN is created, a sample image is passed through the model to ensure that everything works properly, and the generated feature vector matches with expected results.
 
-### 2.3 📝 Preparing Textual Data
+### 2.3 Preparing Textual Data 📝
 
 **Sequence Creation:**
 - For each caption, input-output pairs are produced to train a model. While the input takes up a part of the sentence, the output carries the next word that should come after the previous part.  
@@ -63,7 +63,7 @@ Once the CNN is created, a sample image is passed through the model to ensure th
 **One-Hot Encoding:**
 - Each word in the captions is encoded into one-hot format to be compatible with the LSTM  
 
-### 2.4 🔄 Designing the LSTM Architecture
+### 2.4 Designing the LSTM Architecture 🔄
 
 The LSTM architecture plays the role of the decoder in the model:
 
@@ -74,7 +74,7 @@ The LSTM architecture plays the role of the decoder in the model:
 - **Dense Layers**: The merged features are fed into dense layers using ReLU activation  
 - **Output Layer**: Using the softmax activation function next word in the caption is predicted  
 
-### 2.5 🧰 Preparing Training Data
+### 2.5 Preparing Training Data 🧰
 
 **Feature Extraction**: CNN analyzes all images; extracts needed features and saves them in a dictionary  
 
@@ -84,8 +84,8 @@ The LSTM architecture plays the role of the decoder in the model:
 - **Input Sequences (X2)**: Segment of the caption sequence  
 - **Output Words (y)**: One-hot representation of the next word  
 
-## 🖼️ Architecture Diagram
+## 3. System Design Structure Overview 🖼️
 
 The visual representation of the components below illustrates how they work together in this image captioning project:
 
-![Architecture Diagram](C:\Users\Helime\Desktop\arc.png)
+![Structural Overview](../assets/images/arc.png)
