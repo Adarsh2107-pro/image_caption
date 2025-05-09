@@ -61,7 +61,16 @@ Tensorflow is a common, trusted package for machine learning. Because of its pop
 - [x] **4.1 Data Preparation**
   - [x] Cleaning, normalization, augmentation scripts
 - [ ] **4.2 Data Documentation**
-  - [ ] Description of data prep process
+  - [ ] We use DVC (Data Version Control) to manage and version the dataset efficiently. Large files are not stored directly in Git. Instead, we used the following approach:
+    - Installed DVC and the Google Drive plugin:  
+      `pip install dvc dvc-gdrive`
+    - Configured the DVC remote to use a service account:
+      - `dvc remote modify myremote gdrive_use_service_account true`
+      - `dvc remote modify myremote gdrive_service_account_json_file_path .secrets/dvc-drive-key.json`
+    - Pulled the data from the remote with:  
+      `dvc pull`
+    - The dataset is managed through `.dvc` files tracked by Git, with the data itself stored securely in our linked Google Drive remote.
+    - This setup ensures efficient data sharing, reproducibility, and proper access control within the team.
 
 ## 5. Model Training
 - [ ] **5.1 Training Infrastructure**
