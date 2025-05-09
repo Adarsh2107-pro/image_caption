@@ -1,4 +1,5 @@
 import os
+from typing import Any
 
 import numpy as np
 import tensorflow as tf
@@ -43,7 +44,14 @@ def create_cnn_model():
     return model
 
 
-def create_sequences(tokenizer, max_length, captions_list, image_id, features,vocab_size):
+def create_sequences(
+        tokenizer: Any,
+        max_length: int,
+        captions_list: list[str],
+        features: Any,
+        vocab_size: int,
+    ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+
     X1, X2, y = [], [], []
     for caption in captions_list:
         seq = tokenizer.texts_to_sequences([caption])[0]
@@ -62,7 +70,7 @@ def create_sequences(tokenizer, max_length, captions_list, image_id, features,vo
             y.append(out_seq)
     return np.array(X1), np.array(X2), np.array(y)
 
-def create_lstm_model(vocab_size, max_length):
+def create_lstm_model(vocab_size: int, max_length: int) -> tf.keras.Model:
 
     # Image feature input
     inputs1 = Input(shape=(256,))
@@ -84,7 +92,12 @@ def create_lstm_model(vocab_size, max_length):
     model = Model(inputs=[inputs1, inputs2], outputs=outputs)
     return model
 
-def extract_features(cnn_model, images_directory, captions_mapping, preprocess_image):
+def extract_features(
+        cnn_model: tf.keras.Model,
+        images_directory: Any,
+        captions_mapping: dict[str, list[str]],
+        preprocess_image: Any,
+    ) -> Any:
     features = {}
     files = [x for x in captions_mapping.keys()]
     for img_name in files:

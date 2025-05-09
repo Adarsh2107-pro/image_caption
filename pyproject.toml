@@ -35,3 +35,6 @@ select = ["E", "F", "I", "W"]
 
 # Optional: autofix
 # Use `ruff check . --fix` to apply
+
+[tool.mypy]
+ignore_missing_imports = true

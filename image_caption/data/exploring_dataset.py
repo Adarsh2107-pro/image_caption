@@ -1,14 +1,14 @@
-# Image path for the images
+from typing import Dict, List
+
 import pandas as pd
 
 image_path = r"C:\DeepLearning\finalProject\flickr8k\Images"
 
 # Read the CSV file containing captions
 data = pd.read_csv(r"C:\DeepLearning\finalProject\flickr8k\captions.txt")
-
 # Create a dictionary mapping image names to captions
-def load_captions(data):
-    mapping = {}
+def load_captions(data: pd.DataFrame) -> Dict[str, List[str]]:
+    mapping: Dict[str, List[str]] = {}
     for _, row in data.iterrows():
         image_id, caption = row['image'], row['caption']
         image_id = image_id.split('#')[0]  # Strip any extra info from image ID

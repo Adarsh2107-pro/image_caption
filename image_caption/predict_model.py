@@ -4,7 +4,7 @@ import torch
 def predict(
     model: torch.nn.Module,
     dataloader: torch.utils.data.DataLoader
-) -> None:
+) -> torch.Tensor:
     """Run prediction for a given model and dataloader.
 
     Args:
