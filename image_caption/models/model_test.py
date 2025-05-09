@@ -1,7 +1,16 @@
+from typing import Any
 
 import numpy as np
+import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-def generate_caption(model, tokenizer, photo, max_length):
+
+
+def generate_caption(
+        model: tf.keras.Model,
+        tokenizer: Any,
+        photo: Any,
+        max_length: int,
+    ) -> str:
     in_text = 'startseq'
     for i in range(max_length):
         # Encode input sequence
