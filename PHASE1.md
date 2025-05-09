@@ -77,7 +77,7 @@ The model was evaluated on the BLEU score and cross-entropy loss.
 
 ## 6. Documentation & Reporting
 - [x] **6.1 Project README**
-  - [x] Overview, setup, replication steps, dependencies, team contributions
+  - [x] [Overview, setup, replication steps, dependencies, team contributions](docs/README.md)
 - [ ] **6.2 Code Documentation**
   - [ ] Docstrings, inline comments, code style (ruff), type checking (mypy), Makefile docs
 
