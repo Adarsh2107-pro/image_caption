@@ -61,13 +61,17 @@ Josh Knize: Wrote README.md and PHASE1.md files. Added typing with mypy and code
 ## 7. References
 - [x] List of datasets, frameworks, and major third-party tools used
 
-Python and Anaconda
+1. Python and Anaconda
 
-Tensorflow, pandas, numpy, and pillow libraries
+2. Tensorflow, pandas, numpy, and pillow libraries
 
-Flickr8k dataset
+3. Flickr8k dataset
 
-CNN and LSTM models
+4. CNN and LSTM models
+
+5. ruff for code formatting
+
+6. mypy for typing
 
 ---
 

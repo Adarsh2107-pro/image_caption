@@ -81,6 +81,8 @@ The model was evaluated on the BLEU score and cross-entropy loss.
 - [ ] **6.2 Code Documentation**
   - [ ] Docstrings, inline comments, code style (ruff), type checking (mypy), Makefile docs
 
+We use ruff for formatting our code with standard settings plus an increased line length of 120. We used mypy to check our typing. Docstrings and inline comments will be continuously added thoughout the project, and our typing will be made increasingly more specific. We have a Makefile document corresponding to our ruff and mypy commands. 
+
 ---
 
 > **Checklist:** Use this as a guide. Not all items are required, but thorough documentation and reproducibility are expected.
