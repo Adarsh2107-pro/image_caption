@@ -1,0 +1,18 @@
+model:
+  type: CNN_LSTM
+  cnn:
+    input_size: 224
+    normalize: true
+  lstm:
+    embedding_dim: 256
+    units: 512
+optimizer:
+  type: Adam
+  learning_rate: 0.001
+training:
+  batch_size: 64
+  epochs: 20
+  max_caption_length: 34
+data:
+  captions_file: flickr8k/captions.txt
+  images_path: flickr8k/Images
