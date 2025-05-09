@@ -25,3 +25,16 @@ dev = { file = ["requirements_dev.txt"] }
 
 [tool.ruff]
 line-length = 120
+
+# Optional: enable some extra rules
+select = ["E", "F", "I", "W"]
+# E = pycodestyle errors
+# F = pyflakes
+# I = isort
+# W = warnings
+
+# Optional: autofix
+# Use `ruff check . --fix` to apply
+
+[tool.mypy]
+ignore_missing_imports = true

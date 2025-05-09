@@ -54,9 +54,9 @@ See architecture diagram in docs/architecture.png
 ## 6. Contribution Summary
 - [ ] Briefly describe each team member's contributions
 
-Aadarsh Narain: Created Git repository and structure. Uploaded models, data, and code. 
-Aytaj Mahammadli: Wrote documentation for code and models.
-Josh Knize: Wrote README.md and PHASE1.md files.
+Aadarsh Narain: Created Git repository and structure. Uploaded models, data, and code. Created DVC. 
+Aytaj Mahammadli: Wrote documentation for code and models. Responsible for hydra. 
+Josh Knize: Wrote README.md and PHASE1.md files. Added typing with mypy and code formatting with ruff.
 
 ## 7. References
 - [x] List of datasets, frameworks, and major third-party tools used

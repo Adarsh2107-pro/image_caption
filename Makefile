@@ -114,3 +114,9 @@ help:
 		printf "\n"; \
 	}' \
 	| more $(shell test $(shell uname) = Darwin && echo '--no-init --raw-control-chars')
+
+typecheck:
+	mypy image_caption/
+
+lint:
+	ruff check image_caption/
