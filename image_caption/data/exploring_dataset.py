@@ -3,13 +3,13 @@ from typing import Dict, List
 import pandas as pd
 
 # Josh comment: why do we need this line?
-# image_path = r"C:\DeepLearning\finalProject\flickr8k\Images"
+# image_path = r"C:\DeepLearning\finalProject\data\Images"
 
 # Read the CSV file containing captions
 # Josh comments:
     # we need to make this path relative
     # but also, why do we even need this lines?
-# data = pd.read_csv(r"flickr8k/captions.txt")
+# data = pd.read_csv(r"data/captions.txt")
 
 # Create a dictionary mapping image names to captions
 def load_captions(data: pd.DataFrame) -> Dict[str, List[str]]:
