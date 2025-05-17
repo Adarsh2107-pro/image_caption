@@ -178,8 +178,12 @@ cython_debug/
 .secrets/
 
 # Ignore data files and models
-/data/
-/models/
+# Ignore model artifacts but allow DVC tracking files
+models/*.keras
+models/*.pkl
+!models/*.dvc
+
+# General data and model formats
 *.csv
 *.tsv
 *.json
@@ -188,8 +192,14 @@ cython_debug/
 *.gz
 *.h5
 *.hdf5
-*.pkl
 *.joblib
 *.npy
 *.npz
-/flickr8k
+
+# Project-specific folders
+/secrets/
+/flickr8k/
+/data/
+
+
+/models
