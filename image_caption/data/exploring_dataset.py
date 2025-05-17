@@ -4,8 +4,8 @@ import pandas as pd
 class DatasetLoader:
     def __init__(self):
         # Automatically set when an object is created
-        self.image_path: str = r"C:\GITproject\image_caption\flickr8k\Images"
-        self.data: pd.DataFrame = pd.read_csv(r"C:\GITproject\image_caption\flickr8k\captions.txt")
+        self.image_path: str = r"flickr8k/Images" # Set to relative path
+        self.data: pd.DataFrame = pd.read_csv(r"flickr8k/captions.txt") # Set to relative path
 
     def load_captions(self) -> Dict[str, List[str]]:
         """
