@@ -1,11 +1,18 @@
+import os
 from typing import Dict, List
+
+import hydra
 import pandas as pd
 
+
 class DatasetLoader:
-    def __init__(self):
+    def __init__(self, config: Dict):
+        # Hydra changes the working directory -- change it back
+        os.chdir(hydra.utils.get_original_cwd())
+
         # Automatically set when an object is created
-        self.image_path: str = r"flickr8k/Images" # Set to relative path
-        self.data: pd.DataFrame = pd.read_csv(r"flickr8k/captions.txt") # Set to relative path
+        self.image_path: str = config['img_path'] # Set to relative path
+        self.data: pd.DataFrame = pd.read_csv(config['captions_path']) # Set to relative path
 
     def load_captions(self) -> Dict[str, List[str]]:
         """

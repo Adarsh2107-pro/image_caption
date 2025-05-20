@@ -200,6 +200,7 @@ models/*.pkl
 /secrets/
 /flickr8k/
 /data/
+/outputs/
 
 
 /models
