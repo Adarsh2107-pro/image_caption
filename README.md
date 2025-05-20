@@ -45,7 +45,7 @@ If you want to work within the repository, follow the steps below:
     - `conda activate image_caption_env`
     - `pip install -r requirements.txt`
 
-- [ ] How to run the code and reproduce results
+- [x] How to run the code and reproduce results
 
 If you want to replicate our results, then Docker can be used for training and evaluating the model. 
 
@@ -53,7 +53,7 @@ If you want to replicate our results, then Docker can be used for training and e
 
 2. Build the Docker image with this command: `docker build -f dockerfiles/main.dockerfile . -t main:latest`
 
-3. Download the data using the DVC instructions. 
+3. Download the data using the DVC instructions. Alternatively, download using Kaggle: https://www.kaggle.com/datasets/adityajn105/flickr8k
 
 4. docker run -v /"Path to data on your local machine":/data --name exp1 main:latest
 
@@ -72,6 +72,7 @@ Josh Knize:
     - Added typing with mypy and code formatting with ruff. 
     - Debugged model training and evaluation code
     - Built Docker image
+    - Built logging functionality
 
 ## 7. References
 - [x] List of datasets, frameworks, and major third-party tools used
@@ -89,6 +90,8 @@ Josh Knize:
 6. mypy for typing
 
 7. Docker for containerization
+
+8. logging with logging and rich
 
 ---
 
