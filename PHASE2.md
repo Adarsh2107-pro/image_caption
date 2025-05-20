@@ -26,8 +26,11 @@
 
 ## 5. Application & Experiment Logging
 - [ ] **5.1 Logging Setup**
-  - [ ] logger and/or rich integrated
-  - [ ] Example log entries and their meaning
+  - [x] logger and/or rich integrated
+
+`logger` with rich can be imported from `image_caption.config`. A logs/ directory will be created in the parent directory of the script where it is used, but you may change it in image_caption/config.py. `rich` is used to enhance logs. Use logger.info() or logger.error() to write to a running output log in these directories. See docs/info.md for more detail.
+
+  - [x] Example log entries and their meaning
 
 ## 6. Configuration Management
 - [ ] **6.1 Hydra or Similar**
