@@ -1,0 +1,21 @@
+INFO 2025-05-20 07:24:14,239 [root:main.py:<module>:27]
+Total images: 8091
+
+INFO 2025-05-20 07:24:14,255 [root:main.py:<module>:45]
+Vocabulary Size: 814
+
+INFO 2025-05-20 07:24:14,258 [root:main.py:<module>:49]
+Maximum caption length: 27
+
+INFO 2025-05-20 07:24:14,689 [root:main.py:<module>:60]
+Feature vector shape: (1, 256)
+
+INFO 2025-05-20 07:24:14,799 [root:main.py:<module>:62]
+Feature vector shape: (1, 256)
+
+INFO 2025-05-20 07:24:23,491 [root:main.py:<module>:78]
+Extracted features for 100 images
+
+INFO 2025-05-20 07:24:58,581 [root:main.py:<module>:134]
+Generated caption: startseq dog is and dog in in endseq
+

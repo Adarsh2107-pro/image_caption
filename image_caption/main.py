@@ -10,6 +10,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.preprocessing.text import Tokenizer
 
 import image_caption.data.exploring_dataset as ds
+from image_caption.config import logger
 
 # Custom imports
 from image_caption.data.data_preprocessing import clean_captions, preprocess_image
@@ -23,7 +24,7 @@ importlib.reload(ds)
 # Load all captions mapping
 loader= DatasetLoader()
 all_captions_mapping = loader.load_captions()
-print(f"Total images: {len(all_captions_mapping)}")
+logger.info(f"Total images: {len(all_captions_mapping)}")
 
 # Selecting the first 100 images
 
@@ -41,11 +42,11 @@ tokenizer = Tokenizer()
 tokenizer.fit_on_texts(all_captions)
 
 vocab_size = len(tokenizer.word_index) + 1
-print(f"Vocabulary Size: {vocab_size}")
+logger.info(f"Vocabulary Size: {vocab_size}")
 
 # Maximum length of a caption
 max_length = max(len(caption.split()) for caption in all_captions)
-print(f"Maximum caption length: {max_length}")
+logger.info(f"Maximum caption length: {max_length}")
 
 cnn_model = create_cnn_model()
 cnn_model.summary()
@@ -56,9 +57,9 @@ image = preprocess_image(img_path)
 image = np.expand_dims(image, axis=0)  # Add batch dimension
 
 feature_vector = cnn_model.predict(image)
-print(f"Feature vector shape: {feature_vector.shape}")
+logger.info(f"Feature vector shape: {feature_vector.shape}")
 feature_vector = cnn_model.predict(image)
-print(f"Feature vector shape: {feature_vector.shape}")
+logger.info(f"Feature vector shape: {feature_vector.shape}")
 
 lstm_model = create_lstm_model(vocab_size, max_length)
 lstm_model.summary()
@@ -74,7 +75,7 @@ features = extract_features(
 )
 
 
-print(f"Extracted features for {len(features)} images")
+logger.info(f"Extracted features for {len(features)} images")
 
 # Prepare training data
 X1, X2, y = [], [], []
@@ -130,7 +131,7 @@ plt.axis('off')
 plt.show()
 
 # Print the generated caption
-print(f"Generated caption: {caption}")
+logger.info(f"Generated caption: {caption}")
 
 # Call the function to evaluate the model
 evaluate_model(lstm_model, captions_mapping, features, tokenizer, max_length)
