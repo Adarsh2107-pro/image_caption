@@ -73,6 +73,7 @@ Josh Knize:
     - Debugged model training and evaluation code
     - Built Docker image
     - Built logging functionality
+    - Configuration/experiment managment with Hydra
 
 ## 7. References
 - [x] List of datasets, frameworks, and major third-party tools used
@@ -92,6 +93,8 @@ Josh Knize:
 7. Docker for containerization
 
 8. logging with logging and rich
+
+9. Hydra for configuration/experiment management
 
 ---
 

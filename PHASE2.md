@@ -25,7 +25,7 @@
   - [ ] Instructions for visualizing and comparing runs
 
 ## 5. Application & Experiment Logging
-- [ ] **5.1 Logging Setup**
+- [x] **5.1 Logging Setup**
   - [x] logger and/or rich integrated
 
 `logger` with rich can be imported from `image_caption.config`. A logs/ directory will be created in the parent directory of the script where it is used, but you may change it in image_caption/config.py. `rich` is used to enhance logs. Use logger.info() or logger.error() to write to a running output log in these directories. See docs/info.md for more detail.
@@ -33,9 +33,9 @@
   - [x] Example log entries and their meaning
 
 ## 6. Configuration Management
-- [ ] **6.1 Hydra or Similar**
-  - [ ] Configuration files created
-  - [ ] Example of running experiments with different configs
+- [x] **6.1 Hydra or Similar**
+  - [x] Configuration files created
+  - [x] Example of running experiments with different configs
 
 ## 7. Documentation & Repository Updates
 - [ ] **7.1 Updated README**

@@ -3,8 +3,6 @@ from typing import Any
 
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.models import Model
-from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.layers import (
     LSTM,
     Conv2D,
@@ -16,7 +14,8 @@ from tensorflow.keras.layers import (
     MaxPooling2D,
     concatenate,
 )
-
+from tensorflow.keras.models import Model
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 def create_cnn_model():
