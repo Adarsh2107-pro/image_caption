@@ -1,12 +1,7 @@
 version: "3"
 services:
-  trainer:
-    image: trainer:latest
+  main:
+    image: main:latest
     build:
       context: .
-      dockerfile: dockerfiles/train_model.dockerfile
-  predict:
-    image: predict:latest
-    build:
-      context: .
-      dockerfile: dockerfiles/predict_model.dockerfile
+      dockerfile: dockerfiles/main.dockerfile

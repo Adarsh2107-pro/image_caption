@@ -56,15 +56,12 @@ def create_sequences(
     for caption in captions_list:
         seq = tokenizer.texts_to_sequences([caption])[0]
         for i in range(1, len(seq)):
-            # Input sequence
             in_seq = seq[:i]
-            # Output word
             out_seq = seq[i]
-            # Pad input sequence
+
             in_seq = pad_sequences([in_seq], maxlen=max_length)[0]
-            # Encode output word as one-hot vector
-            out_seq = tf.keras.utils.to_categorical([out_seq], num_classes=vocab_size)[0]
-            # Store
+            out_seq = tf.keras.utils.to_categorical(out_seq, num_classes=vocab_size)
+
             X1.append(features)
             X2.append(in_seq)
             y.append(out_seq)
