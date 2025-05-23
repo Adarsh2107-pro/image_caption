@@ -27,7 +27,7 @@ Debugging breakpoints (`pdb.set_trace()`) and manual print statements were intro
 - [x] **3.1 Profiling Scripts**
   - [x] cProfile, PyTorch Profiler, or similar used
   - [x] Profiling results and optimizations documented
-  
+
 ### Tools Used
 - **cProfile**: Used for lightweight CPU-based profiling to inspect function call times.
 - **SnakeViz**: Web-based visualization of `.prof` files to help identify runtime bottlenecks.
@@ -56,6 +56,27 @@ python image_caption/pytorch_profiler.py
   - [x] MLflow, Weights & Biases, or similar integrated
   - [x] Logging of metrics, parameters, and models
   - [x] Instructions for visualizing and comparing runs
+
+  In the `image_caption.ipynb` notebook, MLflow is integrated to log key details during model training.
+
+```python
+import mlflow
+import mlflow.keras
+
+with mlflow.start_run():
+    # Log hyperparameters
+    mlflow.log_param("epochs", 5)
+    mlflow.log_param("batch_size", 64)
+    
+    # Train the model
+    lstm_model.fit([X1, X2], y, epochs=5, batch_size=64, callbacks=[checkpoint], verbose=1)
+    
+    # Log the trained model
+    mlflow.keras.log_model(lstm_model, "model")
+    
+    # Log metrics such as loss (replace final_loss_value with actual loss)
+    mlflow.log_metric("loss", final_loss_value)
+```
 
 ## 5. Application & Experiment Logging
 - [x] **5.1 Logging Setup**
