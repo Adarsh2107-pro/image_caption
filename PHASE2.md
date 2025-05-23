@@ -86,10 +86,9 @@ with mlflow.start_run():
   pip install mlflow
 
 - To monitor experiments, run the MLflow UI server:
+  ```bash
+  mlflow ui
 
-```bash
-mlflow ui
-```
 The command will output a local URL ( http://localhost:5000) to open in a browser, where you can track and compare experiment runs.
 
 ## 5. Application & Experiment Logging
