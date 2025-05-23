@@ -54,6 +54,9 @@ python image_caption/pytorch_profiler.py
 ### Profiling visualization with SnakeViz
 ![Profiling visualization with SnakeViz](./assets/images/SnakeVizResult.jpg)
 
+### Profiling visualization with PyTorch Profiler
+![Profiling visualization with PyTorch Profiler](./assets/images/PyTorchResult.jpg)
+
 ## 4. Experiment Management & Tracking
 - [x] **4.1 Experiment Tracking Tools**
   - [x] MLflow, Weights & Biases, or similar integrated
