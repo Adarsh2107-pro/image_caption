@@ -7,6 +7,7 @@
 - [x] **1.2 Environment Consistency**
   - [x] All dependencies included in the container
 
+### Setup Instructions
 1. Install Docker using this link: https://docs.docker.com/get-started/get-docker/
 
 2. Build the Docker image with this command: `docker build -f dockerfiles/main.dockerfile . -t main:latest`
