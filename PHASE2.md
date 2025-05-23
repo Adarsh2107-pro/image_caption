@@ -78,6 +78,20 @@ with mlflow.start_run():
     mlflow.log_metric("loss", final_loss_value)
 ```
 
+### Setup & Monitoring Instructions
+- To add MLflow logging code just above the `fit` call in the `image_caption.ipynb` notebook.
+- To use MLflow, install it via:
+
+  ```bash
+  pip install mlflow
+
+- To monitor experiments, run the MLflow UI server:
+
+```bash
+mlflow ui
+
+The command will output a local URL ( http://localhost:) to open in a browser, where you can track and compare experiment runs.
+
 ## 5. Application & Experiment Logging
 - [x] **5.1 Logging Setup**
   - [x] logger and/or rich integrated
