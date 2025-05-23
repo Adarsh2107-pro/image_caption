@@ -7,6 +7,12 @@
 - [x] **1.2 Environment Consistency**
   - [x] All dependencies included in the container
 
+1. Install Docker using this link: https://docs.docker.com/get-started/get-docker/
+
+2. Build the Docker image with this command: `docker build -f dockerfiles/main.dockerfile . -t main:latest`
+
+3. docker run -v /"Path to data on your local machine":/data --name exp1 main:latest
+
 ## 2. Monitoring & Debugging
 
 - [x] **2.1 Debugging Practices**
