@@ -78,6 +78,9 @@ with mlflow.start_run():
     mlflow.log_metric("loss", final_loss_value)
 ```
 
+### Profiling visualization with SnakeViz
+![Profiling visualization with SnakeViz](assets/images/snakeviz_profile.jpg)
+
 ### Setup & Monitoring Instructions
 - To add MLflow logging code just above the `fit` call in the `image_caption.ipynb` notebook.
 - To use MLflow, install it via:
