@@ -51,6 +51,9 @@ pip install torch torchvision tensorboard
 python image_caption/pytorch_profiler.py
 ```
 
+### Profiling visualization with SnakeViz
+![Profiling visualization with SnakeViz](assets/images/snakeviz_profile.jpg)
+
 ## 4. Experiment Management & Tracking
 - [x] **4.1 Experiment Tracking Tools**
   - [x] MLflow, Weights & Biases, or similar integrated
@@ -77,9 +80,6 @@ with mlflow.start_run():
     # Log metrics such as loss (replace final_loss_value with actual loss)
     mlflow.log_metric("loss", final_loss_value)
 ```
-
-### Profiling visualization with SnakeViz
-![Profiling visualization with SnakeViz](assets/images/snakeviz_profile.jpg)
 
 ### Setup & Monitoring Instructions
 - To add MLflow logging code just above the `fit` call in the `image_caption.ipynb` notebook.
