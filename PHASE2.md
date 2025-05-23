@@ -89,7 +89,7 @@ with mlflow.start_run():
   ```bash
   mlflow ui
 
-The command will output a local URL ( http://localhost:5000) to open in a browser, where you can track and compare experiment runs.
+The command will output a local URL ( http://localhost:xxxx) to open in a browser, where you can track and compare experiment runs.
 
 ## 5. Application & Experiment Logging
 - [x] **5.1 Logging Setup**
