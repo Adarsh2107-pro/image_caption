@@ -52,7 +52,7 @@ python image_caption/pytorch_profiler.py
 ```
 
 ### Profiling visualization with SnakeViz
-![Profiling visualization with SnakeViz](assets/images/snakeviz_profile.jpg)
+![Profiling visualization with SnakeViz](./assets/images/SnakeVizResult.jpg)
 
 ## 4. Experiment Management & Tracking
 - [x] **4.1 Experiment Tracking Tools**
