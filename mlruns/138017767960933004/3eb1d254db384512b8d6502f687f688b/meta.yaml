@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/GITproject/image_caption/mlruns/138017767960933004/3eb1d254db384512b8d6502f687f688b/artifacts
+end_time: 1747965920050
+entry_point_name: ''
+experiment_id: '138017767960933004'
+lifecycle_stage: active
+run_id: 3eb1d254db384512b8d6502f687f688b
+run_name: run_lstm_model_v1
+run_uuid: 3eb1d254db384512b8d6502f687f688b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747965822022
+status: 3
+tags: []
+user_id: kumar
