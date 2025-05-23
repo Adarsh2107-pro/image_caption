@@ -8,7 +8,7 @@ import pandas as pd
 class DatasetLoader:
     def __init__(self, config: Dict):
         # Hydra changes the working directory -- change it back
-        os.chdir(hydra.utils.get_original_cwd())
+        
 
         # Automatically set when an object is created
         self.image_path: str = config['img_path'] # Set to relative path
