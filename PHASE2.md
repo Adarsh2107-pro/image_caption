@@ -1,7 +1,7 @@
 # PHASE 2: Enhancing ML Operations with Containerization & Monitoring
 
 ## 1. Containerization
-- [ ] **1.1 Dockerfile**
+- [x] **1.1 Dockerfile**
   - [x] Dockerfile created and tested
   - [x] Instructions for building and running the container
 - [x] **1.2 Environment Consistency**
@@ -9,20 +9,93 @@
 
 ## 2. Monitoring & Debugging
 
-- [ ] **2.1 Debugging Practices**
-  - [ ] Debugging tools used (e.g., pdb)
-  - [ ] Example debugging scenarios and solutions
+- [x] **2.1 Debugging Practices**
+  - [x] Debugging tools used (e.g., pdb)
+  - [x] Example debugging scenarios and solutions
+#### Tools Used
+- **pdb**: Used in early development to pause execution and inspect variables.
+- **print() statements**: Employed during preprocessing and model training to validate input/output shapes.
+- **TensorFlow logs**: Utilized to monitor warnings and catch shape mismatches.
 
+#### Issues Faced
+No critical runtime errors were encountered during training or inference.
+
+#### Preparedness
+Debugging breakpoints (`pdb.set_trace()`) and manual print statements were introduced in the early development stages to inspect data flow and model behavior. These were removed or commented out after achieving stability.
+  
 ## 3. Profiling & Optimization
-- [ ] **3.1 Profiling Scripts**
-  - [ ] cProfile, PyTorch Profiler, or similar used
-  - [ ] Profiling results and optimizations documented
+- [x] **3.1 Profiling Scripts**
+  - [x] cProfile, PyTorch Profiler, or similar used
+  - [x] Profiling results and optimizations documented
+
+### Tools Used
+- **cProfile**: Used for lightweight CPU-based profiling to inspect function call times.
+- **SnakeViz**: Web-based visualization of `.prof` files to help identify runtime bottlenecks.
+- **PyTorch Profiler**: Enabled layer-wise and GPU/CPU operation profiling for model components.
+- **TensorBoard**: Visualized PyTorch profiling traces in an intuitive timeline format.
+
+### Commands Used
+```bash
+# General CPU profiling
+python -m cProfile -s cumtime image_caption/main.py
+python -m cProfile -o profile_results.prof image_caption/main.py
+
+# Visualization
+pip install snakeviz
+snakeviz profile_results.prof
+
+# Install PyTorch and TensorBoard
+pip install torch torchvision tensorboard
+
+# Run PyTorch Profiler script
+python image_caption/pytorch_profiler.py
+```
+
+### Profiling visualization with SnakeViz
+![Profiling visualization with SnakeViz](./assets/images/SnakeVizResult.jpg)
+
+### Profiling visualization with PyTorch Profiler
+![Profiling visualization with PyTorch Profiler](./assets/images/PyTorchResult.jpg)
 
 ## 4. Experiment Management & Tracking
-- [ ] **4.1 Experiment Tracking Tools**
-  - [ ] MLflow, Weights & Biases, or similar integrated
-  - [ ] Logging of metrics, parameters, and models
-  - [ ] Instructions for visualizing and comparing runs
+- [x] **4.1 Experiment Tracking Tools**
+  - [x] MLflow, Weights & Biases, or similar integrated
+  - [x] Logging of metrics, parameters, and models
+  - [x] Instructions for visualizing and comparing runs
+
+  In the `image_caption.ipynb` notebook, MLflow is integrated to log key details during model training.
+
+```python
+import mlflow
+import mlflow.keras
+
+with mlflow.start_run():
+    # Log hyperparameters
+    mlflow.log_param("epochs", 5)
+    mlflow.log_param("batch_size", 64)
+    
+    # Train the model
+    lstm_model.fit([X1, X2], y, epochs=5, batch_size=64, callbacks=[checkpoint], verbose=1)
+    
+    # Log the trained model
+    mlflow.keras.log_model(lstm_model, "model")
+    
+    # Log metrics such as loss (replace final_loss_value with actual loss)
+    mlflow.log_metric("loss", final_loss_value)
+```
+
+### Setup & Monitoring Instructions
+- To add MLflow logging code just above the `fit` call in the `image_caption.ipynb` notebook.
+- To use MLflow, install it via:
+
+  ```bash
+  pip install mlflow
+
+- To monitor experiments, run the MLflow UI server:
+  ```bash
+  mlflow ui
+
+The command will output a local URL ( http://localhost:xxxx) to open in a browser, where you can track and compare experiment runs.
 
 ## 5. Application & Experiment Logging
 - [x] **5.1 Logging Setup**
@@ -38,6 +111,6 @@
   - [x] Example of running experiments with different configs
 
 ## 7. Documentation & Repository Updates
-- [ ] **7.1 Updated README**
-  - [ ] Instructions for all new tools and processes
-  - [ ] All scripts and configs included in repo
+- [x] **7.1 Updated README**
+  - [x] Instructions for all new tools and processes
+  - [x] All scripts and configs included in repo
