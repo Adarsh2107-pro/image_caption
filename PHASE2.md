@@ -12,7 +12,6 @@
 - [ ] **2.1 Debugging Practices**
   - [x] Debugging tools used (e.g., pdb)
   - [x] Example debugging scenarios and solutions
-
 #### Tools Used
 - **pdb**: Used in early development to pause execution and inspect variables.
 - **print() statements**: Employed during preprocessing and model training to validate input/output shapes.
@@ -23,12 +22,7 @@ No critical runtime errors were encountered during training or inference.
 
 #### Preparedness
 Debugging breakpoints (`pdb.set_trace()`) and manual print statements were introduced in the early development stages to inspect data flow and model behavior. These were removed or commented out after achieving stability.
-
-#### Example
-```python
-# Used for tensor shape inspection
-print(f"X1: {X1.shape}, X2: {X2.shape}, y: {y.shape}")
-
+  
 ## 3. Profiling & Optimization
 - [ ] **3.1 Profiling Scripts**
   - [ ] cProfile, PyTorch Profiler, or similar used
