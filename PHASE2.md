@@ -105,10 +105,17 @@ The command will output a local URL ( http://localhost:xxxx) to open in a browse
 
   - [x] Example log entries and their meaning
 
+See docs/info.md
+
 ## 6. Configuration Management
 - [x] **6.1 Hydra or Similar**
   - [x] Configuration files created
+
+See config/conf
+
   - [x] Example of running experiments with different configs
+
+See docs/run_experiments.md
 
 ## 7. Documentation & Repository Updates
 - [x] **7.1 Updated README**

@@ -1,0 +1,4 @@
+# conf/demo.yaml
+
+# model_id will be used to save the model under a name {model_id}.keras
+model_id: 'demo'
