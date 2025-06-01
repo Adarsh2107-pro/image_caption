@@ -1,7 +1,10 @@
 import os
-import numpy as np
 import pickle
+
+import numpy as np
 from tensorflow.keras.models import load_model
+
+from image_caption.config import logger
 from image_caption.models.model_test import generate_caption
 
 # --- Paths ---
@@ -17,17 +20,17 @@ model = load_model(model_path)
 # --- Load Tokenizer ---
 with open(tokenizer_path, "rb") as f:
     tokenizer = pickle.load(f)
-print("Tokenizer loaded.")
+logger.info("Tokenizer loaded.")
 
 # --- Load Features ---
 with open(features_path, "rb") as f:
     features = pickle.load(f)
-print("Features loaded.")
+logger.info("Features loaded.")
 
 # --- Load max_length ---
 with open(max_length_path, "r") as f:
     max_length = int(f.read())
-print(f"max_length loaded: {max_length}")
+logger.info(f"max_length loaded: {max_length}")
 
 # --- Select an image ---
 image_id = list(features.keys())[40]
@@ -36,4 +39,4 @@ photo = np.expand_dims(photo, axis=0)
 
 # --- Generate Caption ---
 caption = generate_caption(model, tokenizer, photo, max_length)
-print("Generated caption:", caption)
+logger.info("Generated caption:", caption)

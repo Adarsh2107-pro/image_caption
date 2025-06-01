@@ -201,6 +201,6 @@ models/*.pkl
 /flickr8k/
 /data/
 /outputs/
-
+/mlruns/
 
 /models
