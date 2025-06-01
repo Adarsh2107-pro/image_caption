@@ -1,0 +1,32 @@
+# conf/config.yaml
+defaults:
+  - experiment: demo # use demo.yaml by default
+  - _self_
+
+model_id: 'tutorial'
+
+# General
+seed: 1867
+verbose: true
+
+# Data
+img_path: "flickr8k/Images"
+captions_path: "flickr8k/captions.txt"
+
+# Checkpoint
+loss_type: 'loss' # use 'val_loss' for validation split
+save_best_only: true
+save_weights_only: false
+mode: 'min'
+
+# CNN
+optimizer: 'adam'
+loss: 'categorical_crossentropy'
+
+# LSTM
+epochs: 5
+batch_size: 64
+
+# Notebook
+n_captions: 100
+example_img_path: "flickr8k/Images/667626_18933d713e.jpg"

@@ -1,0 +1,8 @@
+# conf/exp1.yaml
+
+# model_id will be used to save the model under a name {model_id}.keras
+model_id: 'exp1'
+
+# LSTM
+epochs: 4 # one less epoch
+batch_size: 32 # halved batch size
