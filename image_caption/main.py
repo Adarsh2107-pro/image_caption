@@ -1,9 +1,12 @@
 # Standard imports
 import importlib.util
 import os
+import pickle
 
 import hydra
 import matplotlib.pyplot as plt
+import mlflow
+import mlflow.keras
 import numpy as np
 import pandas as pd
 import yaml
@@ -24,7 +27,7 @@ from image_caption.visualizations.model_visualization import evaluate_model
 
 importlib.reload(ds)
 
-@hydra.main(version_base=None, config_path="../data/conf", config_name="config.yaml")
+@hydra.main(version_base=None, config_path="../config/conf", config_name="config.yaml")
 def main(cfg: DictConfig):
     # Load all captions mapping
     loader= DatasetLoader(cfg)
@@ -53,6 +56,16 @@ def main(cfg: DictConfig):
     max_length = max(len(caption.split()) for caption in all_captions)
     logger.info(f"Maximum caption length: {max_length}")
 
+    # Save tokenizer
+    # Make sure the models directory exists
+    os.makedirs("models", exist_ok=True)
+
+    # Save the tokenizer object
+    with open("models/tokenizer.pkl", "wb") as f:
+        pickle.dump(tokenizer, f)
+
+    logger.info("Tokenizer saved to models/tokenizer.pkl")
+
     cnn_model = create_cnn_model()
     cnn_model.summary()
 
@@ -79,6 +92,13 @@ def main(cfg: DictConfig):
         preprocess_image
     )
 
+    # Save extracted features to file
+    os.makedirs("models", exist_ok=True)
+
+    with open("models/features.pkl", "wb") as f:
+        pickle.dump(features, f)
+
+    print("Features saved to models/features.pkl")
 
     logger.info(f"Extracted features for {len(features)} images")
 
@@ -111,6 +131,54 @@ def main(cfg: DictConfig):
         save_weights_only=cfg['save_weights_only'],
         mode=cfg['mode']
     )
+
+    # Save tokenizer
+    with open("models/tokenizer.pkl", "wb") as f:
+        pickle.dump(tokenizer, f)
+
+    # Save max_length
+    with open("models/max_length.txt", "w") as f:
+        f.write(str(max_length))
+
+    # Save extracted features (for inference)
+    with open("models/features.pkl", "wb") as f:
+        pickle.dump(features, f)
+
+    logger.info("Tokenizer, max_length, and features saved.")
+
+    if cfg['mlflow_tracking']:
+        # Set up experiment (you can change the name if needed)
+        mlflow.set_experiment("image-captioning-experiment-main")
+
+        with mlflow.start_run(run_name="run_lstm_model_v1_main"):
+            # Log hyperparameters
+            mlflow.log_params({
+                "epochs": cfg.epochs,
+                "batch_size": cfg.batch_size,
+                "vocab_size": vocab_size,
+                "max_length": max_length,
+                "model_type": "custom_cnn+lstm"
+            })
+
+            # Fit model (your existing code here)
+            lstm_model.fit([X1, X2], y, epochs=cfg.epochs, batch_size=cfg.batch_size,
+                           callbacks=[checkpoint], verbose=cfg.verbose)
+
+            # Log final loss manually (if you store history)
+            # final_loss = history.history['loss'][-1]  # if using a variable
+            # mlflow.log_metric("final_loss", final_loss)
+
+            # Log model artifacts
+            mlflow.log_artifact("models/best_model.keras")
+            mlflow.log_artifact("models/tokenizer.pkl")
+            mlflow.log_artifact("models/max_length.txt")
+            mlflow.log_artifact("models/features.pkl")
+    else:
+        # Fit model
+        lstm_model.fit([X1, X2], y, epochs=cfg.epochs, batch_size=cfg.batch_size,
+                        callbacks=[checkpoint], verbose=cfg.verbose)
+
+
     # Fit model
     lstm_model.fit([X1, X2], y, epochs=cfg.epochs, batch_size=cfg['batch_size'],
                    callbacks=[checkpoint], verbose=cfg['verbose'])

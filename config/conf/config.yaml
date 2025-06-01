@@ -8,6 +8,7 @@ model_id: 'tutorial'
 # General
 seed: 1867
 verbose: true
+mlflow_tracking: false
 
 # Data
 img_path: "flickr8k/Images"
