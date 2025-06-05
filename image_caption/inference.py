@@ -39,4 +39,4 @@ photo = np.expand_dims(photo, axis=0)
 
 # --- Generate Caption ---
 caption = generate_caption(model, tokenizer, photo, max_length)
-logger.info("Generated caption:", caption)
+logger.info(f"Generated caption: {caption}")

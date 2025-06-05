@@ -8,11 +8,17 @@ import pandas as pd
 class DatasetLoader:
     def __init__(self, config: Dict):
         # Hydra changes the working directory -- change it back
-        
+
 
         # Automatically set when an object is created
         self.image_path: str = config['img_path'] # Set to relative path
         self.data: pd.DataFrame = pd.read_csv(config['captions_path']) # Set to relative path
+
+    def __len__(self) -> int:
+        """
+        Returns the length of the data loader
+        """
+        return len(self.data['image'].unique())
 
     def load_captions(self) -> Dict[str, List[str]]:
         """
