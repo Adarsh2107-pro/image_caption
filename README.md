@@ -57,11 +57,12 @@ If you want to replicate our results, then Docker can be used for training and e
 
 4. Run the Docker image
  ```bash
-docker run --name exp1 --rm \\
--v /"Path to repo on your local machine"/flickr8k:/flickr8k \\
--v /"Path to repo on your local machine"/config:/config \\
--v /"Path to repo on your local machine"/models:/models \\
+docker run --name exp1 --rm ^
+-v /"Path to repo on your local machine"/flickr8k:/flickr8k ^
+-v /"Path to repo on your local machine"/config:/config ^
+-v /"Path to repo on your local machine"/models:/models ^
 main:latest
+```
 
 ## 6. Contribution Summary
 - [ ] Briefly describe each team member's contributions
