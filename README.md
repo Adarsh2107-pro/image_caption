@@ -55,7 +55,14 @@ If you want to replicate our results, then Docker can be used for training and e
 
 3. Download the data using the DVC instructions. Alternatively, download using Kaggle: https://www.kaggle.com/datasets/adityajn105/flickr8k
 
-4. docker run -v /"Path to data on your local machine":/data --name exp1 main:latest
+4. Run the Docker image
+ ```bash
+docker run --name exp1 --rm ^
+-v /"Path to repo on your local machine"/flickr8k:/flickr8k ^
+-v /"Path to repo on your local machine"/config:/config ^
+-v /"Path to repo on your local machine"/models:/models ^
+main:latest
+```
 
 ## 6. Contribution Summary
 - [ ] Briefly describe each team member's contributions
@@ -74,6 +81,8 @@ Josh Knize:
     - Built Docker image
     - Built logging functionality
     - Configuration/experiment managment with Hydra
+    - Added unit testing
+    - Maintained main.py for Docker runs
 
 ## 7. References
 - [x] List of datasets, frameworks, and major third-party tools used

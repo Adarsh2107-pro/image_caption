@@ -14,4 +14,5 @@ rich == 14.0.0
 
 mlflow
 pytest
-pickle
+
+hydra-core >= 1.1.0

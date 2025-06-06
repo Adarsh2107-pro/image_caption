@@ -181,10 +181,6 @@ def main(cfg: DictConfig):
                             callbacks=[checkpoint], verbose=cfg.verbose)
 
 
-        # Fit model
-        lstm_model.fit([X1, X2], y, epochs=cfg.epochs, batch_size=cfg['batch_size'],
-                       callbacks=[checkpoint], verbose=cfg['verbose'])
-
         # Load an image
         image_id = list(captions_mapping.keys())[40].split('.')[0]  # Get the 45th image id
         photo = features[image_id]
