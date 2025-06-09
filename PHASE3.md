@@ -19,8 +19,36 @@ pytest
 - [ ] **1.2 GitHub Actions Workflows**
   - [ ] CI workflows for running tests, DVC, code checks (e.g., ruff), Docker builds
   - [ ] Workflow YAML files included
-- [ ] **1.3 Pre-commit Hooks**
-  - [ ] Pre-commit config and setup instructions
+- [x] **1.3 Pre-commit Hooks**
+  - [x] Pre-commit config and setup instructions
+
+```bash
+### Pre-commit Hooks Setup & Usage
+
+# Install pre-commit
+pip install pre-commit
+- Tool to manage git hooks that run automatically before commits.
+
+# Create .pre-commit-config.yaml in project root
+- Lists hooks to run, their versions, and repositories.
+
+Included hooks:
+black: Auto-formats Python code for consistent style.
+mypy: Static type checking to catch errors early.
+ruff: Fast linter and autofixer, replaces flake8 for speed and power.
+end-of-file-fixer: Ensures files end with a newline (POSIX standard).
+trailing-whitespace: Removes trailing spaces to keep code clean.
+flake8 (commented): Commented (replaced by ruff, because it was slower and less powerful than ruff)
+
+
+# Install hooks to Git
+pre-commit install
+- Hooks run automatically before every commit.
+
+# Run hooks on all files initially
+pre-commit run --all-files
+- Fixes existing issues across the codebase.
+```
 
 ## 2. Continuous Docker Building & CML
 - [ ] **2.1 Docker Image Automation**
