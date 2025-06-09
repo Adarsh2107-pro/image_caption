@@ -12,7 +12,7 @@ This project aims to provide a complete machine learning (ML) solution to addres
 
 - [x] Problem statement and motivation
 
-The problem of image caption generation is currently of great interest in artificial intelligence (AI) research. Recent advancements in image classification and object detection, as well as natural language processing (NLP) with large language models (LLMs), has opened up opportunities for further research into automatic image caption generation. The ability to do this task can lead to significant progress in other problems such as image searchability, visual question answering (VQA), image understanding, and multi-modal model capabilities. 
+The problem of image caption generation is currently of great interest in artificial intelligence (AI) research. Recent advancements in image classification and object detection, as well as natural language processing (NLP) with large language models (LLMs), has opened up opportunities for further research into automatic image caption generation. The ability to do this task can lead to significant progress in other problems such as image searchability, visual question answering (VQA), image understanding, and multi-modal model capabilities.
 
 - [x] Main objectives
 
@@ -39,15 +39,15 @@ If you want to work within the repository, follow the steps below:
 
 1. Clone the Github repository and open the directory in the command line.
 
-2. Create a conda environment: 
+2. Create a conda environment:
     - `conda create -n image_caption_env python=3.10`
-3. Activate the conda environment and install dependencies: 
+3. Activate the conda environment and install dependencies:
     - `conda activate image_caption_env`
     - `pip install -r requirements.txt`
 
 - [x] How to run the code and reproduce results
 
-If you want to replicate our results, then Docker can be used for training and evaluating the model. 
+If you want to replicate our results, then Docker can be used for training and evaluating the model.
 
 1. Install Docker using this link: https://docs.docker.com/get-started/get-docker/
 
@@ -67,16 +67,16 @@ main:latest
 ## 6. Contribution Summary
 - [ ] Briefly describe each team member's contributions
 
-Aadarsh Narain: 
-    - Created Git repository and structure. 
-    - Uploaded models, data, and code. 
-    - Created DVC. 
-Aytaj Mahammadli: 
-    - Wrote documentation for code and models. 
-    - Implemented hydra. 
-Josh Knize: 
-    - Wrote README.md and PHASE1.md files. 
-    - Added typing with mypy and code formatting with ruff. 
+Aadarsh Narain:
+    - Created Git repository and structure.
+    - Uploaded models, data, and code.
+    - Created DVC.
+Aytaj Mahammadli:
+    - Wrote documentation for code and models.
+    - Implemented hydra.
+Josh Knize:
+    - Wrote README.md and PHASE1.md files.
+    - Added typing with mypy and code formatting with ruff.
     - Debugged model training and evaluation code
     - Built Docker image
     - Built logging functionality

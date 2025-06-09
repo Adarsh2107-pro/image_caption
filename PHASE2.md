@@ -22,7 +22,7 @@ No critical runtime errors were encountered during training or inference.
 
 #### Preparedness
 Debugging breakpoints (`pdb.set_trace()`) and manual print statements were introduced in the early development stages to inspect data flow and model behavior. These were removed or commented out after achieving stability.
-  
+
 ## 3. Profiling & Optimization
 - [x] **3.1 Profiling Scripts**
   - [x] cProfile, PyTorch Profiler, or similar used
@@ -73,13 +73,13 @@ with mlflow.start_run():
     # Log hyperparameters
     mlflow.log_param("epochs", 5)
     mlflow.log_param("batch_size", 64)
-    
+
     # Train the model
     lstm_model.fit([X1, X2], y, epochs=5, batch_size=64, callbacks=[checkpoint], verbose=1)
-    
+
     # Log the trained model
     mlflow.keras.log_model(lstm_model, "model")
-    
+
     # Log metrics such as loss (replace final_loss_value with actual loss)
     mlflow.log_metric("loss", final_loss_value)
 ```

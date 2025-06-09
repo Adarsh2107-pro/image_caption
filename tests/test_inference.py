@@ -35,5 +35,3 @@ def test_inference(model):
 
     # A string caption should be generated
     assert isinstance(caption, str)
-
-

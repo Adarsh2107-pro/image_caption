@@ -1,11 +1,11 @@
-- **Import the logger:**  
-    Use the `logger` (with rich formatting) from `image_caption.config`. Use `logger.setLevel(logging.WARNING)` to set 
+- **Import the logger:**
+    Use the `logger` (with rich formatting) from `image_caption.config`. Use `logger.setLevel(logging.WARNING)` to set
     the logging level (in this example, to level=WARNING).
 
-- **Log directory:**  
+- **Log directory:**
     By default, a `logs/` directory is created in the parent directory of the script. You can change this location in `image_caption/config.py`.
 
-- **Enhanced logging:**  
+- **Enhanced logging:**
     The `rich` library is used to improve log readability. Use `logger.info()` or `logger.error()` to write output logs to these directories.
 
 ---
@@ -36,4 +36,3 @@ Extracted features for 100 images
 INFO 2025-05-20 07:24:58,581 [root:main.py:<module>:134]
 Generated caption: startseq dog is and dog in in endseq
 ```
-
