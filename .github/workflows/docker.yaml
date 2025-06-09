@@ -1,9 +1,11 @@
 name: SE489 Docker Image continuous integration
+
 on:
-    push:
-        branches: [ "**" ]
+  push:
+    branches: [ "**" ]
+
 jobs:
-    build:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
