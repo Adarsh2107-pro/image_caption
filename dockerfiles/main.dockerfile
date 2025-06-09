@@ -15,4 +15,4 @@ RUN --mount=type=cache,target=~/pip/.cache pip install -r requirements.txt --no-
 RUN pip install . --no-deps --no-cache-dir
 
 # Run as module to avoid import errors
-ENTRYPOINT ["python", "-m", "image_caption.main"] 
+ENTRYPOINT ["python", "-m", "image_caption.main"]

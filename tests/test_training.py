@@ -60,4 +60,3 @@ def test_lstm_training(lstm_model):
     # Fit model (should not cause any errors)
     results = lstm_model.fit([X1, X2], y, epochs=1, batch_size=batch_size, verbose=0)
     assert results.history['loss']
-
