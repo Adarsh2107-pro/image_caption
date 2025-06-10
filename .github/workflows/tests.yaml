@@ -26,7 +26,7 @@ jobs:
     - name: Write GDrive credentials to file
       run: |
         mkdir -p .secrets
-        echo "${GDRIVE_CREDENTIALS_DATA}" > .secrets/dvc-drive-key.json
+        echo "${{ secrets.GDRIVE_CREDENTIALS_DATA }}" > .secrets/dvc-drive-key.json
 
     - name: Pull data with DVC
       run: dvc pull
