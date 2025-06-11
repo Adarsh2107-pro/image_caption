@@ -68,15 +68,24 @@ main:latest
 - [ ] Briefly describe each team member's contributions
 
 Aadarsh Narain:
-    - Created Git repository and structure.
-    - Uploaded models, data, and code.
-    - Created DVC.
+    - Created Git repository and structure
+    - Uploaded models, data, and code
+    - Created DVC
+    - Implemented Deployment 
+    - Pushing Docker images to GCP Artifact Registry
+    - Execution of custom training jobs on GCP using Vertex AI or Compute Engine
+    - FastAPI application using GCP Cloud Functions
+    - GCP Cloud Run and UI using Streamlit or Gradio on Hugging Face's platform.
 Aytaj Mahammadli:
     - Wrote documentation for code and models.
-    - Implemented hydra.
+    - Wrote OVERVIEW_PROJECT.md and PHASE1.md, PHASE2.md, PHASE3.md files.
+    - Implemented hydra
+    - Created Profiling scripts and reports using cProfile and PyTorch Profiler.
+    - Pre-commit hooks configurations 
+    - Implemented setup for Continuous Machine Learning with CML
 Josh Knize:
-    - Wrote README.md and PHASE1.md files.
-    - Added typing with mypy and code formatting with ruff.
+    - Wrote README.md and PHASE1.md files
+    - Added typing with mypy and code formatting with ruff
     - Debugged model training and evaluation code
     - Built Docker image
     - Built logging functionality
