@@ -40,7 +40,6 @@ end-of-file-fixer: Ensures files end with a newline (POSIX standard).
 trailing-whitespace: Removes trailing spaces to keep code clean.
 flake8 (commented): Commented (replaced by ruff, because it was slower and less powerful than ruff)
 
-
 # Install hooks to Git
 pre-commit install
 - Hooks run automatically before every commit.
