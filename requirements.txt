@@ -16,3 +16,4 @@ mlflow
 pytest
 
 hydra-core >= 1.1.0
+python-multipart
