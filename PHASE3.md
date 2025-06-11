@@ -1,7 +1,7 @@
 # PHASE 3: Continuous Machine Learning (CML) & Deployment
 
 ## 1. Continuous Integration & Testing
-- [ ] **1.1 Unit Testing with pytest**
+- [x] **1.1 Unit Testing with pytest**
   - [x] Test scripts for data processing, model training, and evaluation
   - [x] Documentation of the testing process and example test cases
 
@@ -41,7 +41,6 @@ ruff: Fast linter and autofixer, replaces flake8 for speed and power.
 end-of-file-fixer: Ensures files end with a newline (POSIX standard).
 trailing-whitespace: Removes trailing spaces to keep code clean.
 flake8 (commented): Commented (replaced by ruff, because it was slower and less powerful than ruff)
-
 
 # Install hooks to Git
 pre-commit install
