@@ -83,6 +83,7 @@ Josh Knize:
     - Configuration/experiment managment with Hydra
     - Added unit testing
     - Maintained main.py for Docker runs
+    - GitHub workflows (CI) for unit testing and docker building
 
 ## 7. References
 - [x] List of datasets, frameworks, and major third-party tools used

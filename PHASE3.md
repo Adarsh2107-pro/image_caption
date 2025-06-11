@@ -2,7 +2,7 @@
 
 ## 1. Continuous Integration & Testing
 - [ ] **1.1 Unit Testing with pytest**
-  - [ ] Test scripts for data processing, model training, and evaluation
+  - [x] Test scripts for data processing, model training, and evaluation
   - [x] Documentation of the testing process and example test cases
 
 ### How to run unit tests
@@ -16,9 +16,11 @@ pip install pytest
 pytest
 ```
 
-- [ ] **1.2 GitHub Actions Workflows**
-  - [ ] CI workflows for running tests, DVC, code checks (e.g., ruff), Docker builds
-  - [ ] Workflow YAML files included
+Additionally, unit tests are continuously integrated. All Github commits with run each pytest. There's a test for the dataset size and dataset captions, a test for the LSTM and CNN architecture outputs, a test that the code can train an epoch of data, and a test that the model can generate output on inference. 
+
+- [x] **1.2 GitHub Actions Workflows**
+  - [x] CI workflows for running tests, DVC, code checks (e.g., ruff), Docker builds
+  - [x] Workflow YAML files included
 - [x] **1.3 Pre-commit Hooks**
   - [x] Pre-commit config and setup instructions
 
