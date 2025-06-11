@@ -71,11 +71,11 @@ nano .github/workflows/cml.yaml
 - We can use a text editor (like nano or vim) to create your workflow file. The above shows how to do it using Nano.
 
 # Paste your desired CML workflow YAML to nano
-![Pasting YAML file to nano](./assets/images/nano.png) 
 - After pasting the content:
 Press Ctrl + O, then Enter to save
 Press Ctrl + X to exit the editor
 ```
+![Pasting YAML file to nano](./assets/images/nano.png) 
 
 ## 3. Deployment on Google Cloud Platform (GCP)
 - [x] **3.1 GCP Artifact Registry**
@@ -136,47 +136,42 @@ http://127.0.0.1:7860
   - [x] Vertex AI/Compute Engine job setup and documentation
   - [x] Data storage in GCP bucket
 
-```bash
-# The following items verify that the Docker image has been created and pushed to GCP
+The following items verify that the Docker image has been created and pushed to GCP
 ![Docker to GCP Result 1](./assets/images/docker-to-gcp-1.jpeg) 
 ![Docker to GCP Result 1=2](./assets/images/docker-to-gcp-2.jpeg) 
-```
+
 - [x] **3.3 Deploying API with FastAPI & GCP Cloud Functions**
   - [x] FastAPI app for model predictions
   - [x] Deployment steps and API testing instructions
 
-```bash
-# API request handles image uploads
+API request handles image uploads
 ![API Request for Image Uploads](./assets/images/ApiReqWhereUploadImg.jpeg) 
 
-# The response where the generated caption is written
+The response where the generated caption is written
 ![Generated Caption Written](./assets/images/GeneratedCaption.jpeg) 
 
-# The message indicates whether we received a response or not. Since the status is 'OK', it means it's working.
+The message indicates whether we received a response or not. Since the status is 'OK', it means it's working.
 ![Response with Status Code](./assets/images/ResponseWithStatusCode.jpeg) 
-```
 
 - [x] **3.4 Dockerize & Deploy Model with GCP Cloud Run**
   - [x] Containerization and deployment steps
   - [x] Testing and result documentation
 
-```bash
-# Terminal output showing successful model deployment via Google Cloud SDK.
+Terminal output showing successful model deployment via Google Cloud SDK.
 ![Successfully Deployment](./assets/images/SuccessfulDeployment.jpeg) 
 
-# This setup replicates the local version but is now hosted on the live server after deployment.
+This setup replicates the local version but is now hosted on the live server after deployment.
 ![Live Server After Deployment](./assets/images/UrlAfterDeployment.jpeg) 
 
-# This is the response containing the caption generated from the provided image.
+This is the response containing the caption generated from the provided image.
 ![Live Server After Deployment](./assets/images/caption-generation.jpeg) 
 
-# The following three screenshots from the Google project demonstrate that the deployment is running successfully.
+The following three screenshots from the Google project demonstrate that the deployment is running successfully.
 ![Google Project Deployment 1](./assets/images/DVC-drive1.jpeg) 
 
 ![Google Project Deployment 2](./assets/images/DVC-drive2.jpeg) 
 
 ![Google Project Deployment 3](./assets/images/google-logs.jpeg) 
-```
 
 - [x] **3.5 Interactive UI Deployment**
   - [x] Streamlit or Gradio app for model demonstration
@@ -184,11 +179,10 @@ http://127.0.0.1:7860
   - [x] Integration of UI deployment into GitHub Actions workflow
   - [x] Screenshots and usage examples
 
-```bash
-# We built a simple Gradio app to try out our image captioning model. You can upload a picture on the local web page, and the app will show a caption it generates. It uses a model with InceptionV3 to understand the image and create captions. The app runs on your computer at http://127.0.0.1:7860. It’s great for quick testing or showing others how the model works.
+We built a simple Gradio app to try out our image captioning model. You can upload a picture on the local web page, and the app will show a caption it generates. It uses a model with InceptionV3 to understand the image and create captions. The app runs on your computer at http://127.0.0.1:7860. It’s great for quick testing or showing others how the model works.
+
 ![UI Implementation 1](./assets/images/UI-implementation1.jpeg) 
 ![UI Implementation 2](./assets/images/UI-implementation2.jpeg) 
-```
 
 ## 4. Documentation & Repository Updates
 - [x] **4.1 Comprehensive README**
@@ -196,7 +190,5 @@ http://127.0.0.1:7860
   - [x] Screenshots and results of deployments
 - [x] **4.2 Resource Cleanup Reminder**
   - [x] Checklist for removing GCP resources to avoid charges
-
----
 
 > **Checklist:** Use this as a guide for documenting your Phase 3 deliverables. Focus on automation, deployment, and clear, reproducible instructions for all steps.
