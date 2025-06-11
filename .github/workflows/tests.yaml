@@ -26,10 +26,10 @@ jobs:
     - name: Set up DVC
       uses: iterative/setup-dvc@v1
 
-    # - name: Write GDrive credentials to file
-    #   run: |
-    #     mkdir -p .secrets
-    #     echo "${{ secrets.GDRIVE_CREDENTIALS_DATA }}" > .secrets/dvc-drive-key.json
+    - name: Write GDrive credentials to file
+      run: |
+        mkdir -p .secrets
+        echo "${{ secrets.GDRIVE_CREDENTIALS_DATA }}" > .secrets/dvc-drive-key.json
 
     - name: Pull data with DVC
       run: dvc pull
