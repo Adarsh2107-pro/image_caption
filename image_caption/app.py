@@ -1,22 +1,22 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
+import asyncio
+import io
+import logging
+import pickle
+import tempfile
+import time
+
+import numpy as np
+from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import JSONResponse
 from PIL import Image, UnidentifiedImageError
-import io
-import pickle
-import numpy as np
-import tempfile
-import asyncio
-import time
-import logging
-
-from tensorflow.keras.models import load_model, Model
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.applications.inception_v3 import InceptionV3, preprocess_input
-from tensorflow.keras.preprocessing import image as keras_image
 from tensorflow.keras import Input
+from tensorflow.keras.applications.inception_v3 import InceptionV3, preprocess_input
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.models import Model, load_model
+from tensorflow.keras.preprocessing import image as keras_image
 
-from image_caption.models.model_test import generate_caption
 from image_caption.data.data_preprocessing import preprocess_image  # (optional if custom)
+from image_caption.models.model_test import generate_caption
 
 app = FastAPI()
 logger = logging.getLogger("uvicorn.error")
