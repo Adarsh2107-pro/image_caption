@@ -1,6 +1,6 @@
 # pytorch_profiler.py
 import torch
-from torch.profiler import profile, record_function, ProfilerActivity
+from torch.profiler import ProfilerActivity, profile, record_function
 
 model = torch.nn.Linear(10, 1)
 inputs = torch.randn(5, 10)

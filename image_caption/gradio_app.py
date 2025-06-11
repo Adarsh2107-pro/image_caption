@@ -1,12 +1,12 @@
-import gradio as gr
 import pickle
+
+import gradio as gr
 import numpy as np
 from PIL import Image
-from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.inception_v3 import InceptionV3, preprocess_input
-from tensorflow.keras.preprocessing import image as keras_image
-from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Dense
+from tensorflow.keras.models import Model, load_model
+from tensorflow.keras.preprocessing import image as keras_image
 
 from image_caption.models.model_test import generate_caption
 
