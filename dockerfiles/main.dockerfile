@@ -1,18 +1,26 @@
-# Base image
-FROM python:3.11-slim
+FROM python:3.10-slim
 
-RUN apt update && \
-    apt install --no-install-recommends -y build-essential gcc && \
-    apt clean && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
 
-# Ignore data to keep the image reasonably small
-COPY requirements.txt requirements.txt
-COPY pyproject.toml pyproject.toml
+# Copy app file
+COPY image_caption/app.py app.py
+
+# Copy models
+COPY models/ models/
+
+# Copy Python package folder (your own code)
 COPY image_caption/ image_caption/
 
-WORKDIR /
-RUN --mount=type=cache,target=~/pip/.cache pip install -r requirements.txt --no-cache-dir
-RUN pip install . --no-deps --no-cache-dir
+# Copy requirements
+COPY requirements.txt .
 
-# Run as module to avoid import errors
-ENTRYPOINT ["python", "-m", "image_caption.main"]
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose Cloud Run port
+EXPOSE 8080
+
+# Start server
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8080"]
+
+
