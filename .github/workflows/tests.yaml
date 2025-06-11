@@ -20,6 +20,12 @@ jobs:
         python-version: '3.10'
         cache: 'pip'
 
+    - name: Write GDrive credentials to file
+      run: |
+        mkdir -p .secrets
+        echo "${{ secrets.GDRIVE_CREDENTIALS_DATA }}" | base64 --decode > .secrets/dvc-drive-key.json
+
+
     - name: Decode GDrive credentials
       run: echo "${{ secrets.GDRIVE_CREDENTIALS_DATA }}" | base64 --decode > gdrive-credentials.json
 
