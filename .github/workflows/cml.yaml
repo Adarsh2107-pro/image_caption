@@ -21,8 +21,20 @@ jobs:
           pip install -r requirements.txt
           pip install dvc[cml]
 
-      - name: Pull data with DVC
-        run: dvc pull
+      - name: Write GDrive credentials to file
+        run: |
+          mkdir -p .secrets
+          echo "${{ secrets.GDRIVE_CREDENTIALS_DATA }}" | base64 --decode > .secrets/dvc-drive-key.json
+
+
+      - name: Decode GDrive credentials
+        run: echo "${{ secrets.GDRIVE_CREDENTIALS_DATA }}" | base64 --decode > gdrive-credentials.json
+
+      - name: Pull data
+        run: |
+          dvc remote modify myremote gdrive_use_service_account true
+          dvc remote modify myremote gdrive_service_account_json_file_path .secrets/dvc-drive-key.json
+          dvc pull
 
       - name: Run training script
         run: python train.py
