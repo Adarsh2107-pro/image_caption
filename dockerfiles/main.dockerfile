@@ -6,7 +6,7 @@ WORKDIR /app
 COPY image_caption/app.py app.py
 
 # Copy models
-COPY models/ models/
+# COPY models/ models/
 
 # Copy Python package folder (your own code)
 COPY image_caption/ image_caption/
