@@ -1,8 +1,8 @@
 # PHASE 3: Continuous Machine Learning (CML) & Deployment
 
 ## 1. Continuous Integration & Testing
-- [ ] **1.1 Unit Testing with pytest**
-  - [ ] Test scripts for data processing, model training, and evaluation
+- [x] **1.1 Unit Testing with pytest**
+  - [x] Test scripts for data processing, model training, and evaluation
   - [x] Documentation of the testing process and example test cases
 
 ### How to run unit tests
